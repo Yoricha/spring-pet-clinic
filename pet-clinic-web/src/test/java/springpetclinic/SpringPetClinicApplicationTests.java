@@ -1,4 +1,4 @@
-package yorich.springcourse.springpetclinic;
+package springpetclinic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
