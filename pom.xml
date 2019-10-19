@@ -45,7 +45,7 @@
             <version>${jaxb.version}</version>
         </dependency>
     </dependencies>
-
+    <!-- adding release plugin which commits and pushes to github with tag while incrementing the SNAPSHOT -->
     <build>
         <plugins>
             <plugin>
