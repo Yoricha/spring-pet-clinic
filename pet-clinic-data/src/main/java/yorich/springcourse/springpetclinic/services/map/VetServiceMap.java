@@ -1,10 +1,12 @@
 package yorich.springcourse.springpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import yorich.springcourse.springpetclinic.models.Vet;
 import yorich.springcourse.springpetclinic.services.VetService;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {

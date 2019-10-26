@@ -6,8 +6,7 @@ import yorich.springcourse.springpetclinic.models.Owner;
 import yorich.springcourse.springpetclinic.models.Vet;
 import yorich.springcourse.springpetclinic.services.OwnerService;
 import yorich.springcourse.springpetclinic.services.VetService;
-import yorich.springcourse.springpetclinic.services.map.OwnerServiceMap;
-import yorich.springcourse.springpetclinic.services.map.VetServiceMap;
+
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -15,9 +14,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

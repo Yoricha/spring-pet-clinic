@@ -1,10 +1,12 @@
 package yorich.springcourse.springpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import yorich.springcourse.springpetclinic.models.Owner;
 import yorich.springcourse.springpetclinic.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
