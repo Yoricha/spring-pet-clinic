@@ -1,11 +1,13 @@
 package yorich.springcourse.springpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import yorich.springcourse.springpetclinic.models.Owner;
 import yorich.springcourse.springpetclinic.models.PetType;
 import yorich.springcourse.springpetclinic.services.PetTypeService;
 
 import java.util.Set;
 
+@Service
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
