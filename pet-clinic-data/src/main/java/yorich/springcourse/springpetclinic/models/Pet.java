@@ -1,15 +1,25 @@
 package yorich.springcourse.springpetclinic.models;
 
-import lombok.Data;
-
+import javax.persistence.*;
 import java.time.LocalDate;
 
-
+@Entity
+@Table(name = "pets")
 public class Pet extends BaseEntity{
 
+    @Column(name = "name")
     private String name;
+
+    @Column (name = "pet_type")
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private PetType petType;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
+
+    @Column(name = "birthday")
     private LocalDate birthday;
 
 
