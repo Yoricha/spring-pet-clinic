@@ -12,7 +12,6 @@ public class Pet extends BaseEntity{
     private String name;
 
     @Column (name = "type")
-    @ManyToOne
     @JoinColumn(name = "type_id")
     private PetType petType;
 
@@ -56,5 +55,13 @@ public class Pet extends BaseEntity{
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }
