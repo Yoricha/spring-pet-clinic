@@ -17,6 +17,8 @@ public class Visit extends BaseEntity{
     @JoinColumn(name = "pet_id")
     private Pet pet;
 
+    public Visit(){}
+
     public Visit(String description, LocalDate date, Pet pet) {
         this.description = description;
         this.date = date;
