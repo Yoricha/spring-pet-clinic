@@ -1,17 +1,17 @@
 package yorich.springcourse.springpetclinic.services.map;
 
 import org.springframework.stereotype.Service;
-import yorich.springcourse.springpetclinic.models.Owner;
-import yorich.springcourse.springpetclinic.models.PetType;
-import yorich.springcourse.springpetclinic.services.PetTypeService;
+import yorich.springcourse.springpetclinic.models.Speciality;
+import yorich.springcourse.springpetclinic.services.SpecialityService;
 
 import java.util.Set;
 
 @Service
-public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
+public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
+
 
     @Override
-    public Set<PetType> findAll() {
+    public Set<Speciality> findAll() {
         return super.findAll();
     }
 
@@ -21,17 +21,17 @@ public class PetTypeServiceMap extends AbstractMapService<PetType, Long> impleme
     }
 
     @Override
-    public void delete(PetType object) {
+    public void delete(Speciality object) {
         super.delete(object);
     }
 
     @Override
-    public PetType save(PetType object) {
+    public Speciality save(Speciality object) {
         return super.save(object);
     }
 
     @Override
-    public PetType findById(Long id) {
+    public Speciality findById(Long id) {
         return super.findById(id);
     }
 }
