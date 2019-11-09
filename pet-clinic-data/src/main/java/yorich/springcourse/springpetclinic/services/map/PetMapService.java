@@ -1,5 +1,6 @@
 package yorich.springcourse.springpetclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import yorich.springcourse.springpetclinic.models.Pet;
 import yorich.springcourse.springpetclinic.services.PetService;
@@ -7,6 +8,7 @@ import yorich.springcourse.springpetclinic.services.PetService;
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class PetMapService extends AbstractMapService<Pet,Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
