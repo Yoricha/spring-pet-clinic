@@ -1,8 +1,15 @@
 package yorich.springcourse.springpetclinic.models;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "visits")
 public class Visit extends BaseEntity{
@@ -16,14 +23,6 @@ public class Visit extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "pet_id")
     private Pet pet;
-
-    public Visit(){}
-
-    public Visit(String description, LocalDate date, Pet pet) {
-        this.description = description;
-        this.date = date;
-        this.pet = pet;
-    }
 
     public String getDescription() {
         return description;
