@@ -127,6 +127,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <!-- Hels to run all the tests in the project-->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
