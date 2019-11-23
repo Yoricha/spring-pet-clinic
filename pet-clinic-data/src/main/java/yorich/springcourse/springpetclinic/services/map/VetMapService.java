@@ -10,7 +10,7 @@ import yorich.springcourse.springpetclinic.services.VetService;
 import java.util.Set;
 
 @Service
-@Profile({"default","map"})
+@Profile({"default", "map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private SpecialityService specialityService;
@@ -36,13 +36,15 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet object) {
-        if (object.getSpecialities().size() > 0) {
-            object.getSpecialities().forEach(speciality -> {
-                if (speciality.getId() == null) {
-                    Speciality s = specialityService.save(speciality);
-                    s.setId(s.getId());
-                }
-            });
+        if (object.getSpecialities() != null) {
+            if (object.getSpecialities().size() > 0) {
+                object.getSpecialities().forEach(speciality -> {
+                    if (speciality.getId() == null) {
+                        Speciality s = specialityService.save(speciality);
+                        s.setId(s.getId());
+                    }
+                });
+            }
         }
         return super.save(object);
     }
