@@ -8,7 +8,9 @@ import yorich.springcourse.springpetclinic.services.OwnerService;
 import yorich.springcourse.springpetclinic.services.PetService;
 import yorich.springcourse.springpetclinic.services.PetTypeService;
 
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Profile({"default","map"})
@@ -73,5 +75,13 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                 .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return super.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .collect(Collectors.toList());
     }
 }
